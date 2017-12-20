@@ -1,0 +1,1065 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qtyd.dao.funds.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.qtyd.model.User" >
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="type_id" property="typeId" jdbcType="INTEGER" />
+    <result column="`order`" property="`order`" jdbcType="INTEGER" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="paypassword" property="paypassword" jdbcType="VARCHAR" />
+    <result column="islock" property="islock" jdbcType="INTEGER" />
+    <result column="invite_userid" property="inviteUserid" jdbcType="VARCHAR" />
+    <result column="invite_money" property="inviteMoney" jdbcType="DECIMAL" />
+    <result column="real_status" property="realStatus" jdbcType="TINYINT" />
+    <result column="card_type" property="cardType" jdbcType="VARCHAR" />
+    <result column="card_id" property="cardId" jdbcType="VARCHAR" />
+    <result column="card_pic1" property="cardPic1" jdbcType="VARCHAR" />
+    <result column="card_pic2" property="cardPic2" jdbcType="VARCHAR" />
+    <result column="nation" property="nation" jdbcType="VARCHAR" />
+    <result column="realname" property="realname" jdbcType="VARCHAR" />
+    <result column="invest_integral" property="investIntegral" jdbcType="INTEGER" />
+    <result column="integral" property="integral" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="avatar_status" property="avatarStatus" jdbcType="INTEGER" />
+    <result column="email_status" property="emailStatus" jdbcType="TINYINT" />
+    <result column="phone_status" property="phoneStatus" jdbcType="TINYINT" />
+    <result column="video_status" property="videoStatus" jdbcType="INTEGER" />
+    <result column="scene_status" property="sceneStatus" jdbcType="INTEGER" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="TINYINT" />
+    <result column="litpic" property="litpic" jdbcType="VARCHAR" />
+    <result column="tel" property="tel" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="qq" property="qq" jdbcType="VARCHAR" />
+    <result column="wangwang" property="wangwang" jdbcType="VARCHAR" />
+    <result column="email_temp" property="emailTemp" jdbcType="VARCHAR" />
+    <result column="email_status_temp" property="emailStatusTemp" jdbcType="BIT" />
+    <result column="birthday" property="birthday" jdbcType="DATE" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="area" property="area" jdbcType="INTEGER" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="logintime" property="logintime" jdbcType="INTEGER" />
+    <result column="addtime" property="addtime" jdbcType="INTEGER" />
+    <result column="addip" property="addip" jdbcType="VARCHAR" />
+    <result column="uptime" property="uptime" jdbcType="INTEGER" />
+    <result column="upip" property="upip" jdbcType="VARCHAR" />
+    <result column="lasttime" property="lasttime" jdbcType="INTEGER" />
+    <result column="lastip" property="lastip" jdbcType="VARCHAR" />
+    <result column="chongzu_id" property="chongzuId" jdbcType="INTEGER" />
+    <result column="cz_money" property="czMoney" jdbcType="DECIMAL" />
+    <result column="cz_cash" property="czCash" jdbcType="DECIMAL" />
+    <result column="chongzu_new_id" property="chongzuNewId" jdbcType="INTEGER" />
+    <result column="idcardpic" property="idcardpic" jdbcType="INTEGER" />
+    <result column="job" property="job" jdbcType="VARCHAR" />
+    <result column="is_company" property="isCompany" jdbcType="TINYINT" />
+    <result column="reginvitename" property="reginvitename" jdbcType="VARCHAR" />
+    <result column="reg_source" property="regSource" jdbcType="TINYINT" />
+    <result column="trackid" property="trackid" jdbcType="VARCHAR" />
+    <result column="sina_status" property="sinaStatus" jdbcType="TINYINT" />
+    <result column="sina_uid" property="sinaUid" jdbcType="VARCHAR" />
+    <result column="nick_name" property="nickName" jdbcType="VARCHAR" />
+    <result column="realname_time" property="realnameTime" jdbcType="INTEGER" />
+    <result column="reg_port" property="regPort" jdbcType="VARCHAR" />
+    <result column="real_port" property="realPort" jdbcType="VARCHAR" />
+    <result column="real_page" property="realPage" jdbcType="VARCHAR" />
+    <result column="addip_province" property="addipProvince" jdbcType="VARCHAR" />
+    <result column="phone_province" property="phoneProvince" jdbcType="VARCHAR" />
+    <result column="is_borrow_tender" property="isBorrowTender" jdbcType="TINYINT" />
+    <result column="is_account_recharge" property="isAccountRecharge" jdbcType="TINYINT" />
+    <result column="is_payment_password" property="isPaymentPassword" jdbcType="TINYINT" />
+    <result column="withhold" property="withhold" jdbcType="TINYINT" />
+    <result column="is_birthday_remind" property="isBirthdayRemind" jdbcType="TINYINT" />
+    <result column="tracktype_id" property="tracktypeId" jdbcType="INTEGER" />
+    <result column="is_lazy_tender" property="isLazyTender" jdbcType="TINYINT" />
+    <result column="device_status" property="deviceStatus" jdbcType="TINYINT" />
+    <result column="task_marker" property="taskMarker" jdbcType="VARCHAR" />
+    <result column="platcust" property="platcust" jdbcType="VARCHAR" />
+    <result column="xiamen_status" property="xiamenStatus" jdbcType="TINYINT" />
+    <result column="is_payment_password_sina" property="isPaymentPasswordSina" jdbcType="TINYINT" />
+    <result column="logout_status" property="logoutStatus" jdbcType="TINYINT" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.qtyd.model.UserWithBLOBs" extends="BaseResultMap" >
+    <result column="purview" property="purview" jdbcType="LONGVARCHAR" />
+    <result column="remind" property="remind" jdbcType="LONGVARCHAR" />
+    <result column="privacy" property="privacy" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    user_id, type_id, `order`, username, password, paypassword, islock, invite_userid, 
+    invite_money, real_status, card_type, card_id, card_pic1, card_pic2, nation, realname, 
+    invest_integral, integral, status, avatar_status, email_status, phone_status, video_status, 
+    scene_status, email, sex, litpic, tel, phone, qq, wangwang, email_temp, email_status_temp, 
+    birthday, province, city, area, address, logintime, addtime, addip, uptime, upip, 
+    lasttime, lastip, chongzu_id, cz_money, cz_cash, chongzu_new_id, idcardpic, job, 
+    is_company, reginvitename, reg_source, trackid, sina_status, sina_uid, nick_name, 
+    realname_time, reg_port, real_port, real_page, addip_province, phone_province, is_borrow_tender, 
+    is_account_recharge, is_payment_password, withhold, is_birthday_remind, tracktype_id, 
+    is_lazy_tender, device_status, task_marker, platcust, xiamen_status, is_payment_password_sina, 
+    logout_status
+  </sql>
+  <sql id="Blob_Column_List" >
+    purview, remind, privacy
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from dw_user
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from dw_user
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qtyd.model.UserWithBLOBs" >
+    insert into dw_user (user_id, type_id, `order`, 
+      username, password, paypassword, 
+      islock, invite_userid, invite_money, 
+      real_status, card_type, card_id, 
+      card_pic1, card_pic2, nation, 
+      realname, invest_integral, integral, 
+      status, avatar_status, email_status, 
+      phone_status, video_status, scene_status, 
+      email, sex, litpic, 
+      tel, phone, qq, wangwang, 
+      email_temp, email_status_temp, birthday, 
+      province, city, area, 
+      address, logintime, addtime, 
+      addip, uptime, upip, 
+      lasttime, lastip, chongzu_id, 
+      cz_money, cz_cash, chongzu_new_id, 
+      idcardpic, job, is_company, 
+      reginvitename, reg_source, trackid, 
+      sina_status, sina_uid, nick_name, 
+      realname_time, reg_port, real_port, 
+      real_page, addip_province, phone_province, 
+      is_borrow_tender, is_account_recharge, is_payment_password, 
+      withhold, is_birthday_remind, tracktype_id, 
+      is_lazy_tender, device_status, task_marker, 
+      platcust, xiamen_status, is_payment_password_sina, 
+      logout_status, purview, remind, 
+      privacy)
+    values (#{userId,jdbcType=INTEGER}, #{typeId,jdbcType=INTEGER}, #{`order`,jdbcType=INTEGER}, 
+      #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{paypassword,jdbcType=VARCHAR}, 
+      #{islock,jdbcType=INTEGER}, #{inviteUserid,jdbcType=VARCHAR}, #{inviteMoney,jdbcType=DECIMAL}, 
+      #{realStatus,jdbcType=TINYINT}, #{cardType,jdbcType=VARCHAR}, #{cardId,jdbcType=VARCHAR}, 
+      #{cardPic1,jdbcType=VARCHAR}, #{cardPic2,jdbcType=VARCHAR}, #{nation,jdbcType=VARCHAR}, 
+      #{realname,jdbcType=VARCHAR}, #{investIntegral,jdbcType=INTEGER}, #{integral,jdbcType=INTEGER}, 
+      #{status,jdbcType=INTEGER}, #{avatarStatus,jdbcType=INTEGER}, #{emailStatus,jdbcType=TINYINT}, 
+      #{phoneStatus,jdbcType=TINYINT}, #{videoStatus,jdbcType=INTEGER}, #{sceneStatus,jdbcType=INTEGER}, 
+      #{email,jdbcType=VARCHAR}, #{sex,jdbcType=TINYINT}, #{litpic,jdbcType=VARCHAR}, 
+      #{tel,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR}, #{wangwang,jdbcType=VARCHAR}, 
+      #{emailTemp,jdbcType=VARCHAR}, #{emailStatusTemp,jdbcType=BIT}, #{birthday,jdbcType=DATE}, 
+      #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{area,jdbcType=INTEGER}, 
+      #{address,jdbcType=VARCHAR}, #{logintime,jdbcType=INTEGER}, #{addtime,jdbcType=INTEGER}, 
+      #{addip,jdbcType=VARCHAR}, #{uptime,jdbcType=INTEGER}, #{upip,jdbcType=VARCHAR}, 
+      #{lasttime,jdbcType=INTEGER}, #{lastip,jdbcType=VARCHAR}, #{chongzuId,jdbcType=INTEGER}, 
+      #{czMoney,jdbcType=DECIMAL}, #{czCash,jdbcType=DECIMAL}, #{chongzuNewId,jdbcType=INTEGER}, 
+      #{idcardpic,jdbcType=INTEGER}, #{job,jdbcType=VARCHAR}, #{isCompany,jdbcType=TINYINT}, 
+      #{reginvitename,jdbcType=VARCHAR}, #{regSource,jdbcType=TINYINT}, #{trackid,jdbcType=VARCHAR}, 
+      #{sinaStatus,jdbcType=TINYINT}, #{sinaUid,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}, 
+      #{realnameTime,jdbcType=INTEGER}, #{regPort,jdbcType=VARCHAR}, #{realPort,jdbcType=VARCHAR}, 
+      #{realPage,jdbcType=VARCHAR}, #{addipProvince,jdbcType=VARCHAR}, #{phoneProvince,jdbcType=VARCHAR}, 
+      #{isBorrowTender,jdbcType=TINYINT}, #{isAccountRecharge,jdbcType=TINYINT}, #{isPaymentPassword,jdbcType=TINYINT}, 
+      #{withhold,jdbcType=TINYINT}, #{isBirthdayRemind,jdbcType=TINYINT}, #{tracktypeId,jdbcType=INTEGER}, 
+      #{isLazyTender,jdbcType=TINYINT}, #{deviceStatus,jdbcType=TINYINT}, #{taskMarker,jdbcType=VARCHAR}, 
+      #{platcust,jdbcType=VARCHAR}, #{xiamenStatus,jdbcType=TINYINT}, #{isPaymentPasswordSina,jdbcType=TINYINT}, 
+      #{logoutStatus,jdbcType=TINYINT}, #{purview,jdbcType=LONGVARCHAR}, #{remind,jdbcType=LONGVARCHAR}, 
+      #{privacy,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qtyd.model.UserWithBLOBs" >
+    insert into dw_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="typeId != null" >
+        type_id,
+      </if>
+      <if test="`order` != null" >
+        `order`,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="paypassword != null" >
+        paypassword,
+      </if>
+      <if test="islock != null" >
+        islock,
+      </if>
+      <if test="inviteUserid != null" >
+        invite_userid,
+      </if>
+      <if test="inviteMoney != null" >
+        invite_money,
+      </if>
+      <if test="realStatus != null" >
+        real_status,
+      </if>
+      <if test="cardType != null" >
+        card_type,
+      </if>
+      <if test="cardId != null" >
+        card_id,
+      </if>
+      <if test="cardPic1 != null" >
+        card_pic1,
+      </if>
+      <if test="cardPic2 != null" >
+        card_pic2,
+      </if>
+      <if test="nation != null" >
+        nation,
+      </if>
+      <if test="realname != null" >
+        realname,
+      </if>
+      <if test="investIntegral != null" >
+        invest_integral,
+      </if>
+      <if test="integral != null" >
+        integral,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="avatarStatus != null" >
+        avatar_status,
+      </if>
+      <if test="emailStatus != null" >
+        email_status,
+      </if>
+      <if test="phoneStatus != null" >
+        phone_status,
+      </if>
+      <if test="videoStatus != null" >
+        video_status,
+      </if>
+      <if test="sceneStatus != null" >
+        scene_status,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="litpic != null" >
+        litpic,
+      </if>
+      <if test="tel != null" >
+        tel,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="qq != null" >
+        qq,
+      </if>
+      <if test="wangwang != null" >
+        wangwang,
+      </if>
+      <if test="emailTemp != null" >
+        email_temp,
+      </if>
+      <if test="emailStatusTemp != null" >
+        email_status_temp,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="province != null" >
+        province,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="area != null" >
+        area,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="logintime != null" >
+        logintime,
+      </if>
+      <if test="addtime != null" >
+        addtime,
+      </if>
+      <if test="addip != null" >
+        addip,
+      </if>
+      <if test="uptime != null" >
+        uptime,
+      </if>
+      <if test="upip != null" >
+        upip,
+      </if>
+      <if test="lasttime != null" >
+        lasttime,
+      </if>
+      <if test="lastip != null" >
+        lastip,
+      </if>
+      <if test="chongzuId != null" >
+        chongzu_id,
+      </if>
+      <if test="czMoney != null" >
+        cz_money,
+      </if>
+      <if test="czCash != null" >
+        cz_cash,
+      </if>
+      <if test="chongzuNewId != null" >
+        chongzu_new_id,
+      </if>
+      <if test="idcardpic != null" >
+        idcardpic,
+      </if>
+      <if test="job != null" >
+        job,
+      </if>
+      <if test="isCompany != null" >
+        is_company,
+      </if>
+      <if test="reginvitename != null" >
+        reginvitename,
+      </if>
+      <if test="regSource != null" >
+        reg_source,
+      </if>
+      <if test="trackid != null" >
+        trackid,
+      </if>
+      <if test="sinaStatus != null" >
+        sina_status,
+      </if>
+      <if test="sinaUid != null" >
+        sina_uid,
+      </if>
+      <if test="nickName != null" >
+        nick_name,
+      </if>
+      <if test="realnameTime != null" >
+        realname_time,
+      </if>
+      <if test="regPort != null" >
+        reg_port,
+      </if>
+      <if test="realPort != null" >
+        real_port,
+      </if>
+      <if test="realPage != null" >
+        real_page,
+      </if>
+      <if test="addipProvince != null" >
+        addip_province,
+      </if>
+      <if test="phoneProvince != null" >
+        phone_province,
+      </if>
+      <if test="isBorrowTender != null" >
+        is_borrow_tender,
+      </if>
+      <if test="isAccountRecharge != null" >
+        is_account_recharge,
+      </if>
+      <if test="isPaymentPassword != null" >
+        is_payment_password,
+      </if>
+      <if test="withhold != null" >
+        withhold,
+      </if>
+      <if test="isBirthdayRemind != null" >
+        is_birthday_remind,
+      </if>
+      <if test="tracktypeId != null" >
+        tracktype_id,
+      </if>
+      <if test="isLazyTender != null" >
+        is_lazy_tender,
+      </if>
+      <if test="deviceStatus != null" >
+        device_status,
+      </if>
+      <if test="taskMarker != null" >
+        task_marker,
+      </if>
+      <if test="platcust != null" >
+        platcust,
+      </if>
+      <if test="xiamenStatus != null" >
+        xiamen_status,
+      </if>
+      <if test="isPaymentPasswordSina != null" >
+        is_payment_password_sina,
+      </if>
+      <if test="logoutStatus != null" >
+        logout_status,
+      </if>
+      <if test="purview != null" >
+        purview,
+      </if>
+      <if test="remind != null" >
+        remind,
+      </if>
+      <if test="privacy != null" >
+        privacy,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="typeId != null" >
+        #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="`order` != null" >
+        #{`order`,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="paypassword != null" >
+        #{paypassword,jdbcType=VARCHAR},
+      </if>
+      <if test="islock != null" >
+        #{islock,jdbcType=INTEGER},
+      </if>
+      <if test="inviteUserid != null" >
+        #{inviteUserid,jdbcType=VARCHAR},
+      </if>
+      <if test="inviteMoney != null" >
+        #{inviteMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="realStatus != null" >
+        #{realStatus,jdbcType=TINYINT},
+      </if>
+      <if test="cardType != null" >
+        #{cardType,jdbcType=VARCHAR},
+      </if>
+      <if test="cardId != null" >
+        #{cardId,jdbcType=VARCHAR},
+      </if>
+      <if test="cardPic1 != null" >
+        #{cardPic1,jdbcType=VARCHAR},
+      </if>
+      <if test="cardPic2 != null" >
+        #{cardPic2,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null" >
+        #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null" >
+        #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="investIntegral != null" >
+        #{investIntegral,jdbcType=INTEGER},
+      </if>
+      <if test="integral != null" >
+        #{integral,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="avatarStatus != null" >
+        #{avatarStatus,jdbcType=INTEGER},
+      </if>
+      <if test="emailStatus != null" >
+        #{emailStatus,jdbcType=TINYINT},
+      </if>
+      <if test="phoneStatus != null" >
+        #{phoneStatus,jdbcType=TINYINT},
+      </if>
+      <if test="videoStatus != null" >
+        #{videoStatus,jdbcType=INTEGER},
+      </if>
+      <if test="sceneStatus != null" >
+        #{sceneStatus,jdbcType=INTEGER},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=TINYINT},
+      </if>
+      <if test="litpic != null" >
+        #{litpic,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null" >
+        #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="wangwang != null" >
+        #{wangwang,jdbcType=VARCHAR},
+      </if>
+      <if test="emailTemp != null" >
+        #{emailTemp,jdbcType=VARCHAR},
+      </if>
+      <if test="emailStatusTemp != null" >
+        #{emailStatusTemp,jdbcType=BIT},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="province != null" >
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null" >
+        #{area,jdbcType=INTEGER},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="logintime != null" >
+        #{logintime,jdbcType=INTEGER},
+      </if>
+      <if test="addtime != null" >
+        #{addtime,jdbcType=INTEGER},
+      </if>
+      <if test="addip != null" >
+        #{addip,jdbcType=VARCHAR},
+      </if>
+      <if test="uptime != null" >
+        #{uptime,jdbcType=INTEGER},
+      </if>
+      <if test="upip != null" >
+        #{upip,jdbcType=VARCHAR},
+      </if>
+      <if test="lasttime != null" >
+        #{lasttime,jdbcType=INTEGER},
+      </if>
+      <if test="lastip != null" >
+        #{lastip,jdbcType=VARCHAR},
+      </if>
+      <if test="chongzuId != null" >
+        #{chongzuId,jdbcType=INTEGER},
+      </if>
+      <if test="czMoney != null" >
+        #{czMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="czCash != null" >
+        #{czCash,jdbcType=DECIMAL},
+      </if>
+      <if test="chongzuNewId != null" >
+        #{chongzuNewId,jdbcType=INTEGER},
+      </if>
+      <if test="idcardpic != null" >
+        #{idcardpic,jdbcType=INTEGER},
+      </if>
+      <if test="job != null" >
+        #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="isCompany != null" >
+        #{isCompany,jdbcType=TINYINT},
+      </if>
+      <if test="reginvitename != null" >
+        #{reginvitename,jdbcType=VARCHAR},
+      </if>
+      <if test="regSource != null" >
+        #{regSource,jdbcType=TINYINT},
+      </if>
+      <if test="trackid != null" >
+        #{trackid,jdbcType=VARCHAR},
+      </if>
+      <if test="sinaStatus != null" >
+        #{sinaStatus,jdbcType=TINYINT},
+      </if>
+      <if test="sinaUid != null" >
+        #{sinaUid,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null" >
+        #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="realnameTime != null" >
+        #{realnameTime,jdbcType=INTEGER},
+      </if>
+      <if test="regPort != null" >
+        #{regPort,jdbcType=VARCHAR},
+      </if>
+      <if test="realPort != null" >
+        #{realPort,jdbcType=VARCHAR},
+      </if>
+      <if test="realPage != null" >
+        #{realPage,jdbcType=VARCHAR},
+      </if>
+      <if test="addipProvince != null" >
+        #{addipProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneProvince != null" >
+        #{phoneProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="isBorrowTender != null" >
+        #{isBorrowTender,jdbcType=TINYINT},
+      </if>
+      <if test="isAccountRecharge != null" >
+        #{isAccountRecharge,jdbcType=TINYINT},
+      </if>
+      <if test="isPaymentPassword != null" >
+        #{isPaymentPassword,jdbcType=TINYINT},
+      </if>
+      <if test="withhold != null" >
+        #{withhold,jdbcType=TINYINT},
+      </if>
+      <if test="isBirthdayRemind != null" >
+        #{isBirthdayRemind,jdbcType=TINYINT},
+      </if>
+      <if test="tracktypeId != null" >
+        #{tracktypeId,jdbcType=INTEGER},
+      </if>
+      <if test="isLazyTender != null" >
+        #{isLazyTender,jdbcType=TINYINT},
+      </if>
+      <if test="deviceStatus != null" >
+        #{deviceStatus,jdbcType=TINYINT},
+      </if>
+      <if test="taskMarker != null" >
+        #{taskMarker,jdbcType=VARCHAR},
+      </if>
+      <if test="platcust != null" >
+        #{platcust,jdbcType=VARCHAR},
+      </if>
+      <if test="xiamenStatus != null" >
+        #{xiamenStatus,jdbcType=TINYINT},
+      </if>
+      <if test="isPaymentPasswordSina != null" >
+        #{isPaymentPasswordSina,jdbcType=TINYINT},
+      </if>
+      <if test="logoutStatus != null" >
+        #{logoutStatus,jdbcType=TINYINT},
+      </if>
+      <if test="purview != null" >
+        #{purview,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="remind != null" >
+        #{remind,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="privacy != null" >
+        #{privacy,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qtyd.model.UserWithBLOBs" >
+    update dw_user
+    <set >
+      <if test="typeId != null" >
+        type_id = #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="`order` != null" >
+        `order` = #{`order`,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="paypassword != null" >
+        paypassword = #{paypassword,jdbcType=VARCHAR},
+      </if>
+      <if test="islock != null" >
+        islock = #{islock,jdbcType=INTEGER},
+      </if>
+      <if test="inviteUserid != null" >
+        invite_userid = #{inviteUserid,jdbcType=VARCHAR},
+      </if>
+      <if test="inviteMoney != null" >
+        invite_money = #{inviteMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="realStatus != null" >
+        real_status = #{realStatus,jdbcType=TINYINT},
+      </if>
+      <if test="cardType != null" >
+        card_type = #{cardType,jdbcType=VARCHAR},
+      </if>
+      <if test="cardId != null" >
+        card_id = #{cardId,jdbcType=VARCHAR},
+      </if>
+      <if test="cardPic1 != null" >
+        card_pic1 = #{cardPic1,jdbcType=VARCHAR},
+      </if>
+      <if test="cardPic2 != null" >
+        card_pic2 = #{cardPic2,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null" >
+        nation = #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null" >
+        realname = #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="investIntegral != null" >
+        invest_integral = #{investIntegral,jdbcType=INTEGER},
+      </if>
+      <if test="integral != null" >
+        integral = #{integral,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="avatarStatus != null" >
+        avatar_status = #{avatarStatus,jdbcType=INTEGER},
+      </if>
+      <if test="emailStatus != null" >
+        email_status = #{emailStatus,jdbcType=TINYINT},
+      </if>
+      <if test="phoneStatus != null" >
+        phone_status = #{phoneStatus,jdbcType=TINYINT},
+      </if>
+      <if test="videoStatus != null" >
+        video_status = #{videoStatus,jdbcType=INTEGER},
+      </if>
+      <if test="sceneStatus != null" >
+        scene_status = #{sceneStatus,jdbcType=INTEGER},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=TINYINT},
+      </if>
+      <if test="litpic != null" >
+        litpic = #{litpic,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null" >
+        qq = #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="wangwang != null" >
+        wangwang = #{wangwang,jdbcType=VARCHAR},
+      </if>
+      <if test="emailTemp != null" >
+        email_temp = #{emailTemp,jdbcType=VARCHAR},
+      </if>
+      <if test="emailStatusTemp != null" >
+        email_status_temp = #{emailStatusTemp,jdbcType=BIT},
+      </if>
+      <if test="birthday != null" >
+        birthday = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="province != null" >
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null" >
+        area = #{area,jdbcType=INTEGER},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="logintime != null" >
+        logintime = #{logintime,jdbcType=INTEGER},
+      </if>
+      <if test="addtime != null" >
+        addtime = #{addtime,jdbcType=INTEGER},
+      </if>
+      <if test="addip != null" >
+        addip = #{addip,jdbcType=VARCHAR},
+      </if>
+      <if test="uptime != null" >
+        uptime = #{uptime,jdbcType=INTEGER},
+      </if>
+      <if test="upip != null" >
+        upip = #{upip,jdbcType=VARCHAR},
+      </if>
+      <if test="lasttime != null" >
+        lasttime = #{lasttime,jdbcType=INTEGER},
+      </if>
+      <if test="lastip != null" >
+        lastip = #{lastip,jdbcType=VARCHAR},
+      </if>
+      <if test="chongzuId != null" >
+        chongzu_id = #{chongzuId,jdbcType=INTEGER},
+      </if>
+      <if test="czMoney != null" >
+        cz_money = #{czMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="czCash != null" >
+        cz_cash = #{czCash,jdbcType=DECIMAL},
+      </if>
+      <if test="chongzuNewId != null" >
+        chongzu_new_id = #{chongzuNewId,jdbcType=INTEGER},
+      </if>
+      <if test="idcardpic != null" >
+        idcardpic = #{idcardpic,jdbcType=INTEGER},
+      </if>
+      <if test="job != null" >
+        job = #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="isCompany != null" >
+        is_company = #{isCompany,jdbcType=TINYINT},
+      </if>
+      <if test="reginvitename != null" >
+        reginvitename = #{reginvitename,jdbcType=VARCHAR},
+      </if>
+      <if test="regSource != null" >
+        reg_source = #{regSource,jdbcType=TINYINT},
+      </if>
+      <if test="trackid != null" >
+        trackid = #{trackid,jdbcType=VARCHAR},
+      </if>
+      <if test="sinaStatus != null" >
+        sina_status = #{sinaStatus,jdbcType=TINYINT},
+      </if>
+      <if test="sinaUid != null" >
+        sina_uid = #{sinaUid,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null" >
+        nick_name = #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="realnameTime != null" >
+        realname_time = #{realnameTime,jdbcType=INTEGER},
+      </if>
+      <if test="regPort != null" >
+        reg_port = #{regPort,jdbcType=VARCHAR},
+      </if>
+      <if test="realPort != null" >
+        real_port = #{realPort,jdbcType=VARCHAR},
+      </if>
+      <if test="realPage != null" >
+        real_page = #{realPage,jdbcType=VARCHAR},
+      </if>
+      <if test="addipProvince != null" >
+        addip_province = #{addipProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneProvince != null" >
+        phone_province = #{phoneProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="isBorrowTender != null" >
+        is_borrow_tender = #{isBorrowTender,jdbcType=TINYINT},
+      </if>
+      <if test="isAccountRecharge != null" >
+        is_account_recharge = #{isAccountRecharge,jdbcType=TINYINT},
+      </if>
+      <if test="isPaymentPassword != null" >
+        is_payment_password = #{isPaymentPassword,jdbcType=TINYINT},
+      </if>
+      <if test="withhold != null" >
+        withhold = #{withhold,jdbcType=TINYINT},
+      </if>
+      <if test="isBirthdayRemind != null" >
+        is_birthday_remind = #{isBirthdayRemind,jdbcType=TINYINT},
+      </if>
+      <if test="tracktypeId != null" >
+        tracktype_id = #{tracktypeId,jdbcType=INTEGER},
+      </if>
+      <if test="isLazyTender != null" >
+        is_lazy_tender = #{isLazyTender,jdbcType=TINYINT},
+      </if>
+      <if test="deviceStatus != null" >
+        device_status = #{deviceStatus,jdbcType=TINYINT},
+      </if>
+      <if test="taskMarker != null" >
+        task_marker = #{taskMarker,jdbcType=VARCHAR},
+      </if>
+      <if test="platcust != null" >
+        platcust = #{platcust,jdbcType=VARCHAR},
+      </if>
+      <if test="xiamenStatus != null" >
+        xiamen_status = #{xiamenStatus,jdbcType=TINYINT},
+      </if>
+      <if test="isPaymentPasswordSina != null" >
+        is_payment_password_sina = #{isPaymentPasswordSina,jdbcType=TINYINT},
+      </if>
+      <if test="logoutStatus != null" >
+        logout_status = #{logoutStatus,jdbcType=TINYINT},
+      </if>
+      <if test="purview != null" >
+        purview = #{purview,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="remind != null" >
+        remind = #{remind,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="privacy != null" >
+        privacy = #{privacy,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.qtyd.model.UserWithBLOBs" >
+    update dw_user
+    set type_id = #{typeId,jdbcType=INTEGER},
+      `order` = #{`order`,jdbcType=INTEGER},
+      username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      paypassword = #{paypassword,jdbcType=VARCHAR},
+      islock = #{islock,jdbcType=INTEGER},
+      invite_userid = #{inviteUserid,jdbcType=VARCHAR},
+      invite_money = #{inviteMoney,jdbcType=DECIMAL},
+      real_status = #{realStatus,jdbcType=TINYINT},
+      card_type = #{cardType,jdbcType=VARCHAR},
+      card_id = #{cardId,jdbcType=VARCHAR},
+      card_pic1 = #{cardPic1,jdbcType=VARCHAR},
+      card_pic2 = #{cardPic2,jdbcType=VARCHAR},
+      nation = #{nation,jdbcType=VARCHAR},
+      realname = #{realname,jdbcType=VARCHAR},
+      invest_integral = #{investIntegral,jdbcType=INTEGER},
+      integral = #{integral,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      avatar_status = #{avatarStatus,jdbcType=INTEGER},
+      email_status = #{emailStatus,jdbcType=TINYINT},
+      phone_status = #{phoneStatus,jdbcType=TINYINT},
+      video_status = #{videoStatus,jdbcType=INTEGER},
+      scene_status = #{sceneStatus,jdbcType=INTEGER},
+      email = #{email,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=TINYINT},
+      litpic = #{litpic,jdbcType=VARCHAR},
+      tel = #{tel,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      qq = #{qq,jdbcType=VARCHAR},
+      wangwang = #{wangwang,jdbcType=VARCHAR},
+      email_temp = #{emailTemp,jdbcType=VARCHAR},
+      email_status_temp = #{emailStatusTemp,jdbcType=BIT},
+      birthday = #{birthday,jdbcType=DATE},
+      province = #{province,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      area = #{area,jdbcType=INTEGER},
+      address = #{address,jdbcType=VARCHAR},
+      logintime = #{logintime,jdbcType=INTEGER},
+      addtime = #{addtime,jdbcType=INTEGER},
+      addip = #{addip,jdbcType=VARCHAR},
+      uptime = #{uptime,jdbcType=INTEGER},
+      upip = #{upip,jdbcType=VARCHAR},
+      lasttime = #{lasttime,jdbcType=INTEGER},
+      lastip = #{lastip,jdbcType=VARCHAR},
+      chongzu_id = #{chongzuId,jdbcType=INTEGER},
+      cz_money = #{czMoney,jdbcType=DECIMAL},
+      cz_cash = #{czCash,jdbcType=DECIMAL},
+      chongzu_new_id = #{chongzuNewId,jdbcType=INTEGER},
+      idcardpic = #{idcardpic,jdbcType=INTEGER},
+      job = #{job,jdbcType=VARCHAR},
+      is_company = #{isCompany,jdbcType=TINYINT},
+      reginvitename = #{reginvitename,jdbcType=VARCHAR},
+      reg_source = #{regSource,jdbcType=TINYINT},
+      trackid = #{trackid,jdbcType=VARCHAR},
+      sina_status = #{sinaStatus,jdbcType=TINYINT},
+      sina_uid = #{sinaUid,jdbcType=VARCHAR},
+      nick_name = #{nickName,jdbcType=VARCHAR},
+      realname_time = #{realnameTime,jdbcType=INTEGER},
+      reg_port = #{regPort,jdbcType=VARCHAR},
+      real_port = #{realPort,jdbcType=VARCHAR},
+      real_page = #{realPage,jdbcType=VARCHAR},
+      addip_province = #{addipProvince,jdbcType=VARCHAR},
+      phone_province = #{phoneProvince,jdbcType=VARCHAR},
+      is_borrow_tender = #{isBorrowTender,jdbcType=TINYINT},
+      is_account_recharge = #{isAccountRecharge,jdbcType=TINYINT},
+      is_payment_password = #{isPaymentPassword,jdbcType=TINYINT},
+      withhold = #{withhold,jdbcType=TINYINT},
+      is_birthday_remind = #{isBirthdayRemind,jdbcType=TINYINT},
+      tracktype_id = #{tracktypeId,jdbcType=INTEGER},
+      is_lazy_tender = #{isLazyTender,jdbcType=TINYINT},
+      device_status = #{deviceStatus,jdbcType=TINYINT},
+      task_marker = #{taskMarker,jdbcType=VARCHAR},
+      platcust = #{platcust,jdbcType=VARCHAR},
+      xiamen_status = #{xiamenStatus,jdbcType=TINYINT},
+      is_payment_password_sina = #{isPaymentPasswordSina,jdbcType=TINYINT},
+      logout_status = #{logoutStatus,jdbcType=TINYINT},
+      purview = #{purview,jdbcType=LONGVARCHAR},
+      remind = #{remind,jdbcType=LONGVARCHAR},
+      privacy = #{privacy,jdbcType=LONGVARCHAR}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qtyd.model.User" >
+    update dw_user
+    set type_id = #{typeId,jdbcType=INTEGER},
+      `order` = #{`order`,jdbcType=INTEGER},
+      username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      paypassword = #{paypassword,jdbcType=VARCHAR},
+      islock = #{islock,jdbcType=INTEGER},
+      invite_userid = #{inviteUserid,jdbcType=VARCHAR},
+      invite_money = #{inviteMoney,jdbcType=DECIMAL},
+      real_status = #{realStatus,jdbcType=TINYINT},
+      card_type = #{cardType,jdbcType=VARCHAR},
+      card_id = #{cardId,jdbcType=VARCHAR},
+      card_pic1 = #{cardPic1,jdbcType=VARCHAR},
+      card_pic2 = #{cardPic2,jdbcType=VARCHAR},
+      nation = #{nation,jdbcType=VARCHAR},
+      realname = #{realname,jdbcType=VARCHAR},
+      invest_integral = #{investIntegral,jdbcType=INTEGER},
+      integral = #{integral,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      avatar_status = #{avatarStatus,jdbcType=INTEGER},
+      email_status = #{emailStatus,jdbcType=TINYINT},
+      phone_status = #{phoneStatus,jdbcType=TINYINT},
+      video_status = #{videoStatus,jdbcType=INTEGER},
+      scene_status = #{sceneStatus,jdbcType=INTEGER},
+      email = #{email,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=TINYINT},
+      litpic = #{litpic,jdbcType=VARCHAR},
+      tel = #{tel,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      qq = #{qq,jdbcType=VARCHAR},
+      wangwang = #{wangwang,jdbcType=VARCHAR},
+      email_temp = #{emailTemp,jdbcType=VARCHAR},
+      email_status_temp = #{emailStatusTemp,jdbcType=BIT},
+      birthday = #{birthday,jdbcType=DATE},
+      province = #{province,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      area = #{area,jdbcType=INTEGER},
+      address = #{address,jdbcType=VARCHAR},
+      logintime = #{logintime,jdbcType=INTEGER},
+      addtime = #{addtime,jdbcType=INTEGER},
+      addip = #{addip,jdbcType=VARCHAR},
+      uptime = #{uptime,jdbcType=INTEGER},
+      upip = #{upip,jdbcType=VARCHAR},
+      lasttime = #{lasttime,jdbcType=INTEGER},
+      lastip = #{lastip,jdbcType=VARCHAR},
+      chongzu_id = #{chongzuId,jdbcType=INTEGER},
+      cz_money = #{czMoney,jdbcType=DECIMAL},
+      cz_cash = #{czCash,jdbcType=DECIMAL},
+      chongzu_new_id = #{chongzuNewId,jdbcType=INTEGER},
+      idcardpic = #{idcardpic,jdbcType=INTEGER},
+      job = #{job,jdbcType=VARCHAR},
+      is_company = #{isCompany,jdbcType=TINYINT},
+      reginvitename = #{reginvitename,jdbcType=VARCHAR},
+      reg_source = #{regSource,jdbcType=TINYINT},
+      trackid = #{trackid,jdbcType=VARCHAR},
+      sina_status = #{sinaStatus,jdbcType=TINYINT},
+      sina_uid = #{sinaUid,jdbcType=VARCHAR},
+      nick_name = #{nickName,jdbcType=VARCHAR},
+      realname_time = #{realnameTime,jdbcType=INTEGER},
+      reg_port = #{regPort,jdbcType=VARCHAR},
+      real_port = #{realPort,jdbcType=VARCHAR},
+      real_page = #{realPage,jdbcType=VARCHAR},
+      addip_province = #{addipProvince,jdbcType=VARCHAR},
+      phone_province = #{phoneProvince,jdbcType=VARCHAR},
+      is_borrow_tender = #{isBorrowTender,jdbcType=TINYINT},
+      is_account_recharge = #{isAccountRecharge,jdbcType=TINYINT},
+      is_payment_password = #{isPaymentPassword,jdbcType=TINYINT},
+      withhold = #{withhold,jdbcType=TINYINT},
+      is_birthday_remind = #{isBirthdayRemind,jdbcType=TINYINT},
+      tracktype_id = #{tracktypeId,jdbcType=INTEGER},
+      is_lazy_tender = #{isLazyTender,jdbcType=TINYINT},
+      device_status = #{deviceStatus,jdbcType=TINYINT},
+      task_marker = #{taskMarker,jdbcType=VARCHAR},
+      platcust = #{platcust,jdbcType=VARCHAR},
+      xiamen_status = #{xiamenStatus,jdbcType=TINYINT},
+      is_payment_password_sina = #{isPaymentPasswordSina,jdbcType=TINYINT},
+      logout_status = #{logoutStatus,jdbcType=TINYINT}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>
