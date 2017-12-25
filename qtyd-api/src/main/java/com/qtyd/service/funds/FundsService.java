@@ -1,5 +1,7 @@
 package com.qtyd.service.funds;
 
+import com.qtyd.model.User;
+
 import java.util.Map;
 
 /**
@@ -12,5 +14,5 @@ public interface FundsService {
      * @param userId 用户id
      * @return
      */
-    Map<String,Object> userFundsByUserId(Long userId);
+    User userFundsByUserId(Long userId);
 }
